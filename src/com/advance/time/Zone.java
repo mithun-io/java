@@ -21,7 +21,6 @@ public class Zone {
 		// tokyo Zone
 		ZoneId tokyo = ZoneId.of("Asia/Tokyo");
 		ZonedDateTime tokyoZone = currentZone.withZoneSameInstant(tokyo);
-
 		System.out.println("tokyo time zone is: " + tokyoZone);
 
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");

@@ -22,7 +22,7 @@ class Student {
 	}
 
 	public static void main(String[] args) {
-		Student student = new Student("smith", 101);
+		new Student("smith", 101);
 	}
 }
 

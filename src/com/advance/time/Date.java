@@ -4,7 +4,6 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 
 public class Date {
-
 	public static void LocalDateTimeApi() {
 		LocalDate date = LocalDate.now();
 		System.out.println("the current date is " + date);

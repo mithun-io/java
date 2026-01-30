@@ -4,7 +4,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-// case 1: 
+// case 1: serialize
 class Student implements Serializable {
 	int id;
 	String name;
@@ -29,7 +29,27 @@ class SerializableExample {
 	}
 }
 
-// case 2:
+// case 2: deserialize
+package com.advance;
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+class DeserializationExample {
+	public static void main(String[] args) throws Exception {
+
+		ObjectInputStream ois =	new ObjectInputStream(new FileInputStream("student.txt"));
+
+		Student s = (Student) ois.readObject();
+
+		ois.close();
+
+		System.out.println(s.id);
+		System.out.println(s.name);
+	}
+}
+
+// case 3:
 class Employee {
 	int id = 10;
 }

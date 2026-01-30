@@ -16,16 +16,12 @@ public class StringClass {
 }
 
 // final class
+// final class cannot be inherited causes compile time error
 final class Bank {
 	void displayRate() {
 	    System.out.println("Interest Rate: 7%");
 	}
 }
-
-/* his will cause a compile-time error if you try to extend
- * class SBI extends Bank { } 
- * Error: cannot subclass the final class Bank
- */
 
 class Main {
 public static void main(String[] args) {
@@ -33,4 +29,3 @@ public static void main(String[] args) {
     bank.displayRate();
 }
 }
-

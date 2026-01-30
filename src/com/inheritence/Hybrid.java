@@ -15,7 +15,6 @@ class Machine {
 }
 
 class Printer extends Machine implements Printable, Scannable {
-
 	public void print() {
 		System.out.println("printing document");
 	}
@@ -27,11 +26,9 @@ class Printer extends Machine implements Printable, Scannable {
 
 public class Hybrid {
 	public static void main(String[] args) {
-
-		Printer p = new Printer();
-
-		p.powerOn();
-		p.print();
-		p.scan();
+		Printer printer = new Printer();
+		printer.powerOn();
+		printer.print();
+		printer.scan();
 	}
 }

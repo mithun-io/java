@@ -18,7 +18,6 @@ public class PeriodExample {
 	}
 
 	public static void checkingDuration() {
-
 		LocalTime time1 = LocalTime.now();
 		System.out.println("the current time is " + time1);
 

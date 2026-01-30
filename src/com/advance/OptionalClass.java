@@ -43,12 +43,6 @@ class OptionalRealTime {
 	}
 }
 
-class OptionalNullExample {
-	public static void main(String[] args) {
-
-	}
-}
-
 //--------------- ifPresentOrElse example
 class OptionalClass {
 	public static void main(String[] args) {

@@ -10,6 +10,9 @@ import java.io.Serializable;
 
 // case 1: serialize
 class Employee implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
 	int empno;
 	String ename;
 	
@@ -29,7 +32,7 @@ public class SerializableExample {
 	public static void main(String[] args) throws FileNotFoundException, IOException  {
 		Employee employee = new Employee(7902, "smith");
 		
-		ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("employee.txt"));
+		ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("employee.ser"));
 		objectOutputStream.writeObject(employee);
 		objectOutputStream.close();
 		
@@ -38,9 +41,9 @@ public class SerializableExample {
 }
 
 // case 2: deserialize
-public class DeSerializableExample {
+class DeSerializableExample {
 	public static void main(String[] args) throws ClassNotFoundException, IOException  {
-		ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("employee.txt"));
+		ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("employee.ser"));
 		
 		Employee employee = (Employee) objectInputStream.readObject();
 		objectInputStream.close();

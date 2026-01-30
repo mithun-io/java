@@ -9,7 +9,7 @@ class Triangle {
 	}
 }
 
-class Example {
+class LambdaExample3 {
 	public static void main(String[] args) {
 		Triangle triangle = new Triangle();
 	

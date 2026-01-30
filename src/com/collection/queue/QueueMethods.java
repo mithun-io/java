@@ -92,23 +92,6 @@ public class QueueMethods {
 		System.out.println(Arrays.toString(arr));
 	}
 
-	// queue-specific 
-	public static void queueSpecific() {
-		Queue<String> queue = new PriorityQueue<>(Arrays.asList("java", "python"));
-
-		// offer vs add
-		queue.offer("c");
-		queue.add("spring");
-
-		// peek vs element
-		System.out.println(queue.peek());
-		System.out.println(queue.element());
-
-		// poll vs remove
-		System.out.println(queue.poll());
-		System.out.println(queue.remove());
-	}
-
 	// ordering
 	public static void ordering() {
 		PriorityQueue<String> queue = new PriorityQueue<>(Arrays.asList("java", "python", "c"));

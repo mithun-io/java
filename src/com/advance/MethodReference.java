@@ -54,7 +54,6 @@ class Student {
 
 class MethodReference {
 	public static void main(String[] args) {
-
 		Supplier<Student> supplier = Student::new;
 		supplier.get();
 	}

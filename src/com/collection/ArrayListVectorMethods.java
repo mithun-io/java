@@ -104,7 +104,7 @@ public class ArrayListVectorMethods {
 		List<String> subList = list.subList(0, 2); 
 		System.out.println(subList);
 		
-		 // elements()
+		// elements()
 		Enumeration<String> enumeration = vector.elements(); 
 		while (enumeration.hasMoreElements()) {
 			System.out.println(enumeration.nextElement());

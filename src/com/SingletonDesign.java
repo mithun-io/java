@@ -18,15 +18,9 @@ class SingletonDesign {
 		return instance;
 	}
 
-	public void showMessage() {
-		System.out.println("hello this is singleton design pattern");
-	}
-
 	public static void main(String[] args) {
 		SingletonDesign one = SingletonDesign.getInstance();
 		SingletonDesign two = SingletonDesign.getInstance();
-
-		one.showMessage();
 
 		System.out.println(one == two);
 	}

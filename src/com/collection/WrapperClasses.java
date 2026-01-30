@@ -20,5 +20,4 @@ public class WrapperClasses {
 		Object obj = Integer.valueOf(10);
 		System.out.println(obj);
 	}
-
 }

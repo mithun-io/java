@@ -15,7 +15,6 @@ class LambdaExample5 {
 		};
 
 		List<Integer> list = Arrays.asList(10, 20, 30, 40, 50);
-		
 		list.forEach(x -> System.out.println(circle.area(x)));
 	}
 }

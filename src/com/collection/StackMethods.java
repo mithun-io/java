@@ -6,24 +6,24 @@ public class StackMethods {
 	public static void main(String[] args) {
 		Stack<String> stack = new Stack<>();
 
-		// Core Methods – push
-		stack.push("Java"); // push(E)
-		stack.push("Python");
-		stack.push("C");
-		System.out.println("Stack after push: " + stack);
+		// push(E)
+		stack.push("java"); 
+		stack.push("python");
+		stack.push("c");
+		System.out.println("stack after push: " + stack);
 
-		// Core Methods – peek
-		System.out.println("Top element: " + stack.peek()); // peek()
+		// peek
+		System.out.println("top element: " + stack.peek()); 
 
-		// Core Methods – pop
-		System.out.println("Removed element: " + stack.pop()); // pop()
-		System.out.println("Stack after pop: " + stack);
+		// pop
+		System.out.println("removed element: " + stack.pop()); 
+		System.out.println("stack after pop: " + stack);
 
-		// Core Methods – empty
-		System.out.println("Is stack empty? " + stack.empty()); // empty()
+		// empty
+		System.out.println("is stack empty? " + stack.empty()); 
 
-		// Core Methods – search
-		System.out.println("Position of Java: " + stack.search("Java")); // search(Object)
-		System.out.println("Position of Python: " + stack.search("Python"));
+		// search(Object)
+		System.out.println("position of java: " + stack.search("java")); 
+		System.out.println("position of python: " + stack.search("python"));
 	}
 }

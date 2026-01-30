@@ -1,7 +1,6 @@
 package com.advance;
 
 interface PaymentUtil {
-	// static method (utility logic)
 	static boolean validateAmount(double amount) {
 		return amount > 0;
 	}

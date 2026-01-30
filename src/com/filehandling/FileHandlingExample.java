@@ -1,65 +1,69 @@
 package com.filehandling;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.BufferedWriter;
-import java.io.FileReader;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileHandlingExample {
-
-	public static void main(String[] args) {
-
+	public static void creation() throws IOException {
 		File folder = new File("C:/folder");
-
-		try {
-			if (!folder.exists()) {
-				folder.mkdir();
-			}
-
-			File fileWriterFile = new File(folder, "example.txt");
-			File bufferedFile = new File(folder, "buffer.txt");
-
-			// -------- FileWriter (write to example.txt) --------
-			FileWriter fw = new FileWriter(fileWriterFile);
-			fw.write("This is written using FileWriter.\n");
-			fw.write("FileWriter writes characters directly.\n");
-			fw.close();
-
-			System.out.println("Written using FileWriter.");
-
-			// -------- FileReader (read from example.txt) --------
-			FileReader fr = new FileReader(fileWriterFile);
-			char[] arr = new char[(int) fileWriterFile.length()];
-			fr.read(arr);
-			fr.close();
-
-			System.out.println("Reading using FileReader:");
-			System.out.println(new String(arr));
-
-			System.out.println("--------------------------------");
-
-			// -------- BufferedWriter (write to buffer.txt) --------
-			BufferedWriter bw = new BufferedWriter(new FileWriter(bufferedFile));
-			bw.write("This is written using BufferedWriter.\n");
-			bw.write("BufferedWriter is faster and efficient.\n");
-			bw.close();
-
-			System.out.println("Written using BufferedWriter.");
-
-			// -------- BufferedReader (read from buffer.txt) --------
-			BufferedReader br = new BufferedReader(new FileReader(bufferedFile));
-			String line;
-
-			System.out.println("Reading using BufferedReader:");
-			while ((line = br.readLine()) != null) {
-				System.out.println(line);
-			}
-			br.close();
-
-		} catch (IOException e) {
-			System.out.println("Error: " + e.getMessage());
+		if (!folder.exists()) {
+			folder.mkdir();
+			System.out.println("folder created successfully");
+		} else {
+			System.out.println("folder already exists");
 		}
+
+		File file = new File(folder, "index.txt");
+		if (!file.exists()) {
+			file.createNewFile();
+			System.out.println("file created successfully");
+		} else {
+			System.out.println("file already exists");
+		}
+	}
+
+	public static void fileWriter() throws IOException {
+		File file = new File("C:/folder/index.txt");
+		FileWriter fileWriter = new FileWriter(file, true);
+		fileWriter.write("contents of file written using FileWriter\n");
+		fileWriter.close();
+		System.out.println("written successfully");
+	}
+
+	public static void fileReader() throws IOException {
+		File file = new File("C:/folder/index.txt");
+		FileReader fileReader = new FileReader(file);
+		char[] ch = new char[(int) file.length()];
+		fileReader.read(ch);
+		fileReader.close();
+
+		System.out.println(new String(ch));
+	}
+
+	public static void bufferedWriter() throws IOException {
+		File file = new File("C:/folder/index.txt");
+		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, true));
+		bufferedWriter.write("contents of file written using BufferedWriter\n");
+		bufferedWriter.close();
+		System.out.println("written successfully");
+	}
+
+	public static void bufferedReader() throws IOException {
+		File file = new File("C:/folder/index.txt");
+		BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+		String line;
+		while ((line = bufferedReader.readLine()) != null) {
+			System.out.println(line);
+		}
+		bufferedReader.close();
+	}
+
+	public static void main(String[] args) throws IOException {
+		bufferedWriter();
+		bufferedReader();
 	}
 }

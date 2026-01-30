@@ -3,6 +3,9 @@ package com.filehandling;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -62,8 +65,27 @@ public class FileHandlingExample {
 		bufferedReader.close();
 	}
 
+	public static void fileOutputStream() throws IOException {
+		File file = new File("C:/folder/stream.txt");
+		FileOutputStream fileOutputStream = new FileOutputStream(file);
+		String data = "contents written using FileOutputStream\n";
+		fileOutputStream.write(data.getBytes());
+		fileOutputStream.close();
+		System.out.println("written successfully");
+	}
+
+	public static void fileInputStream() throws IOException {
+		File file = new File("C:/folder/stream.txt");
+		FileInputStream fileInputStream = new FileInputStream(file);
+		int characters;
+		while ((characters = fileInputStream.read()) != -1) {
+			System.out.print((char) characters);
+		}
+		fileInputStream.close();
+	}
+
 	public static void main(String[] args) throws IOException {
-		bufferedWriter();
-		bufferedReader();
+		fileOutputStream();
+		fileInputStream();
 	}
 }

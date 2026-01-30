@@ -8,21 +8,20 @@ class Employee {
 	String employeeName;
 	double employeeSalary;
 
-	// Constructor
+	// constructor
 	Employee(int employeeId, String employeeName, double employeeSalary) {
 		this.employeeId = employeeId;
 		this.employeeName = employeeName;
 		this.employeeSalary = employeeSalary;
 	}
 
-	// Display method
+	// display method
 	void display() {
 		System.out.println(employeeId + "  " + employeeName + "  " + employeeSalary);
 	}
 }
 
 public class StoreObjects {
-
 	public static void main(String[] args) {
 
 		// Creating ArrayList to store Employee objects

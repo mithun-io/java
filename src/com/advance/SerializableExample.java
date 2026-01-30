@@ -9,11 +9,11 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 // case 1: serialize
-class Student implements Serializable {
+class Employee implements Serializable {
 	int empno;
 	String ename;
 	
-	public Student(int empno, String ename) {
+	public Employee(int empno, String ename) {
 		super();
 		this.empno = empno;
 		this.ename = ename;
@@ -21,16 +21,16 @@ class Student implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Student [empno=" + empno + ", ename=" + ename + "]";
+		return "Employee [empno=" + empno + ", ename=" + ename + "]";
 	}
 }
 
 public class SerializableExample {
 	public static void main(String[] args) throws FileNotFoundException, IOException  {
-		Student student = new Student(7902, "smith");
+		Employee employee = new Employee(7902, "smith");
 		
 		ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("employee.txt"));
-		objectOutputStream.writeObject(student);
+		objectOutputStream.writeObject(employee);
 		objectOutputStream.close();
 		
 		System.out.println("object serialized successfully");
@@ -42,11 +42,11 @@ public class DeSerializableExample {
 	public static void main(String[] args) throws ClassNotFoundException, IOException  {
 		ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("employee.txt"));
 		
-		Student student = (Student) objectInputStream.readObject();
+		Employee employee = (Employee) objectInputStream.readObject();
 		objectInputStream.close();
 		
-		System.out.println(student.empno);
-		System.out.println(student.ename);
+		System.out.println(employee.empno);
+		System.out.println(employee.ename);
 		
 		System.out.println("object de-serialized successfully");
 	}

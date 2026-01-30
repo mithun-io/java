@@ -1,43 +1,35 @@
 package com.thread;
 
-class Counter {
-    int count = 0;
+class NonSynchronized extends Thread {
+	private String task;
 
-    void increment() {
-        count++;
-    }
+	public NonSynchronized(String task) {
+		this.task = task;
+	}
+
+	public void run() {
+		try {
+			System.out.println(task);
+			System.out.println("thread id       : " + Thread.currentThread().getId());
+			System.out.println("thread name     : " + Thread.currentThread().getName());
+			System.out.println("thread priority : " + Thread.currentThread().getPriority());
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 }
 
-class MyThread extends Thread {
-    Counter c;
+public class Main {
+	public static void main(String[] args) {
+		Thread one = new NonSynchronized("chicken");
+		Thread two = new NonSynchronized("fish");
+		Thread three = new NonSynchronized("mutton");
 
-    MyThread(Counter c) {
-        this.c = c;
-    }
-
-    public void run() {
-        for (int i = 0; i < 1000; i++) {
-            c.increment();
-        }
-    }
-}
-
-public class NonSynchronized {
-    public static void main(String[] args) throws Exception {
-
-        Counter c = new Counter();
-
-        MyThread t1 = new MyThread(c);
-        MyThread t2 = new MyThread(c);
-
-        t1.start();
-        t2.start();
-
-        t1.join();
-        t2.join();
-
-        System.out.println(c.count);
-    }
+		one.start();
+		two.start();
+		three.start();
+	}
 }
 
 /* 

@@ -30,7 +30,7 @@ public class ComparableExample {
         Collections.sort(list); 
 
         for (Student student : list) {
-            System.out.println(student.id + " --- " + student.name);
+            System.out.println(student.id + " " + student.name);
         }
     }
 }

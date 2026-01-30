@@ -24,3 +24,13 @@ public class StaticMethodExample {
 		payment.pay(-500);
 	}
 }
+
+/* 
+// no object needed and cleary related to the interface and clean api design
+interface MathUtil {
+    static int add(int a, int b) {
+        return a + b;
+    }
+}
+int sum = MathUtil.add(10, 20);
+*/

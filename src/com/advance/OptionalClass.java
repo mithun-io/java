@@ -50,7 +50,7 @@ class OptionalClass {
 		System.out.println(optional);
 
 		try {
-		    optional.ifPresentOrElse(value -> { System.out.println("value is present, its: " + value); }, () -> { System.out.println("value is empty"); } );
+		    optional.ifPresentOrElse(value -> { System.out.println(value); }, () -> { System.out.println("value is empty"); } );
 		} catch (Exception e) {
 		    System.out.println(e);
 		}

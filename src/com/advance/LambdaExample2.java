@@ -9,7 +9,7 @@ interface Triangle {
 
 class LambdaExample2 {
 	public static void main(String[] args) {
-	 // Triangle triangle = (x, y) -> o.5 * x * y;
+	 // Triangle triangle = (x, y) -> 0.5 * x * y;
 		Triangle triangle = (x, y) -> {
 			return 0.5 * x * y;
 		};

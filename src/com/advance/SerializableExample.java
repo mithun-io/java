@@ -21,11 +21,6 @@ class Employee implements Serializable {
 		this.empno = empno;
 		this.ename = ename;
 	}
-
-	@Override
-	public String toString() {
-		return "Employee [empno=" + empno + ", ename=" + ename + "]";
-	}
 }
 
 public class SerializableExample {

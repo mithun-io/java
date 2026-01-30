@@ -23,7 +23,6 @@ public class PeriodExample {
 
 		Duration fiveHours = Duration.ofHours(5);
 
-		// adding five hours to the current time and storing it in time2
 		LocalTime time2 = time1.plus(fiveHours);
 
 		System.out.println("after adding five hours " + "of duration " + time2);

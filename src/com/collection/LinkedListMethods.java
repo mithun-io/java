@@ -1,78 +1,111 @@
 package com.collection;
 
 import java.util.LinkedList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.ListIterator;
 
 public class LinkedListMethods {
-	public static void main(String[] args) {
+	public static void addMethods() {
 		LinkedList<String> list = new LinkedList<>();
+		// add(E)
+		list.add("java"); 
+		
+		// addFirst(E)
+		list.addFirst("python"); 
+		
+		// addLast(E)
+		list.addLast("c"); 
+		
+		// offer(E)
+		list.offer("spring"); 
+		
+		// offerFirst(E)
+		list.offerFirst("html"); 
+		
+		// offerLast(E)
+		list.offerLast("css"); 
+	}	
+	
+	public static void removePoll() {
+		LinkedList<String> list = new LinkedList<>(Arrays.asList("java", "python", "c", "spring", "hibernate", "sql", "html"));		
+		// remove()
+		list.remove();
 
-		// Add / Offer
-		list.add("Java"); // add(E)
+		// removeFirst()
+		list.removeFirst();
 
-		list.addFirst("Python"); // addFirst(E)
+		// removeLast()
+		list.removeLast();
 
-		list.addLast("C"); // addLast(E)
+		// poll()
+		list.poll();
 
-		list.offer("Spring"); // offer(E)
+		// pollFirst()
+		list.pollFirst();
 
-		list.offerFirst("HTML"); // offerFirst(E)
+		// pollLast()
+		list.pollLast();
+	}
+	
+	public static void peek() {
+		LinkedList<String> list = new LinkedList<>(Arrays.asList("java", "python", "c", "spring", "hibernate", "sql", "html"));
+		// peek()
+		System.out.println(list.peek());
 
-		list.offerLast("CSS"); // offerLast(E)
+		// peekFirst()
+		System.out.println(list.peekFirst());
 
-		// Remove / Poll
-		list.remove(); // remove()
+		// peekLast()
+		System.out.println(list.peekLast());
+	}
+	
+	public static void iteration() {
+		LinkedList<String> list = new LinkedList<>(Arrays.asList("java", "python", "c", "spring", "hibernate", "sql", "html"));
 
-		list.removeFirst(); // removeFirst()
-
-		list.removeLast(); // removeLast()
-
-		list.poll(); // poll()
-
-		list.pollFirst(); // pollFirst()
-
-		list.pollLast(); // pollLast()
-
-		// Add again (for further operations)
-		list.add("Java");
-		list.add("Spring");
-		list.add("Python");
-		list.add("Java");
-
-		// Peek
-		System.out.println(list.peek()); // peek()
-
-		System.out.println(list.peekFirst()); // peekFirst()
-
-		System.out.println(list.peekLast()); // peekLast()
-
-		// Iteration
-		Iterator<String> itr = list.iterator(); // iterator()
+		// iterator()
+		Iterator<String> itr = list.iterator();
 		while (itr.hasNext()) {
 			System.out.println(itr.next());
 		}
 
-		list.forEach(e -> System.out.println(e)); // forEach()
+		// forEach()
+		list.forEach(e -> System.out.println(e));
 
-		ListIterator<String> listItr = list.listIterator(); // listIterator()
+		// listIterator()
+		ListIterator<String> listItr = list.listIterator();
 		while (listItr.hasNext()) {
 			System.out.println(listItr.next());
 		}
 
-		Iterator<String> descItr = list.descendingIterator(); // descendingIterator()
+		// descendingIterator()
+		Iterator<String> descItr = list.descendingIterator();
 		while (descItr.hasNext()) {
 			System.out.println(descItr.next());
 		}
+	}
+	
+	public static void accessSearch() {
+		LinkedList<String> list = new LinkedList<>(Arrays.asList("java", "microservices", "python", "c", "spring", "hibernate", "sql", "html"));
+	
+		// get(int index)
+		System.out.println(list.get(0));
 
-		// Access & Search
-		System.out.println(list.get(0)); // get(int index)
-		list.set(1, "Microservices"); // set(int index, E element)
+		// set(int index, E element)
+		list.set(1, "microservices");
 
-		System.out.println(list.contains("Java")); // contains(Object)
+		// contains(Object)
+		System.out.println(list.contains("java"));
 
-		System.out.println(list.indexOf("Java")); // indexOf(Object)
+		// indexOf(Object)
+		System.out.println(list.indexOf("java"));
 
-		System.out.println(list.lastIndexOf("Java")); // lastIndexOf(Object)
+		// lastIndexOf(Object)
+		System.out.println(list.lastIndexOf("java"));
+
+		}
+		
+	public static void main(String[] args) {
+
 	}
 }

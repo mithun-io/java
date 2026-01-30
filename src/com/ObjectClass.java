@@ -2,23 +2,24 @@ package com;
 
 import java.util.Objects;
 
-class User {
-	String ename;
-	int salary;
+public class User {
+	int id;
+	String name;
 
-	User(String ename, int salary) {
-		this.ename = ename;
-		this.salary = salary;
+	public User(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
 	}
 
 	@Override
 	public String toString() {
-		return "User [ename=" + ename + ", salary=" + salary + "]";
+		return "User [id=" + id + ", name=" + name + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ename, salary);
+		return Objects.hash(id, name);
 	}
 
 	@Override
@@ -30,11 +31,13 @@ class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		return Objects.equals(ename, other.ename) && salary == other.salary;
+		return id == other.id && Objects.equals(name, other.name);
 	}
 
 	public static void main(String[] args) {
-		User user = new User("smith", 800);
-		System.out.println(user.toString());
+		User one = new User(101, "smith");
+		User two = new User(102, "allen");
+		
+		System.out.println(one.equals(two));
 	}
 }
